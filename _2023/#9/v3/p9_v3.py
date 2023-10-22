@@ -7,3 +7,14 @@
 #
 # Ответ: 2097
 
+from statistics import median, mean
+
+with open('p9_v3.txt') as f:
+    data = [tuple(map(int, x.split())) for x in f]
+    count = 0
+
+    for d in data:
+        if len(d) == len(set(d)) and mean(d) >= median(d):
+            count += 1
+
+print(count)
