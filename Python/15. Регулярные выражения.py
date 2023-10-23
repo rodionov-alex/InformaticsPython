@@ -1,4 +1,5 @@
 import re
+import fnmatch
 
 s = 'qwe/rtyqwe/rtyqwe/rtyqwe/rty 77 456'
 
