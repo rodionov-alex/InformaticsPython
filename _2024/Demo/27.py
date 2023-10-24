@@ -34,24 +34,25 @@
 # поскольку написанная по такому алгоритму программа будет выполняться
 # слишком долго.
 
-with open('Task/Доп_файлы/Задание 27/27_B_2024.txt') as f:
+with (open('Task/Доп_файлы/Задание 27/27_B_2024.txt') as f):
     k = int(f.readline())
     n = int(f.readline())
     data = list(map(int, f.readlines()))
     mx = float('-inf')
     z1 = z3 = float('-inf')
 
-    for i in range(n - 2 * k):
-        if data[i] > z1:
-            z1 = data[i]
+    for i in range(k, n - k):
+        if data[i - k] > z1:
+            z1 = data[i - k]
 
-        z2 = data[i + k]
+        z2 = data[i]
 
-        if data[i + 2 * k - 1] >= z3:
-            z3 = max(data[i + 2 * k:])
+        if data[i + k - 1] >= z3:
+            z3 = max(data[i + k:])
 
         mx = max(mx, z1 + z2 + z3)
 
     print(mx)
+
 
 # Ответ: 189536 17210
