@@ -37,3 +37,5 @@ print('range(10) =', list(range(10)))              # [0; 10) с шагом 1
 print('range(10, 20) =', list(range(10, 20)))      # [10; 10) с шагом 1
 print('range(0, 20, 2) =', list(range(0, 20, 2)))  # [0; 20) с шагом 2
 print()
+
+print(type(1 < 2))
