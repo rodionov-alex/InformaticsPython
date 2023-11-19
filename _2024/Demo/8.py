@@ -19,6 +19,7 @@ def is_good(num):
 
 nums = [''.join(x) for x in permutations(digits, 5) if is_good(x)]
 
+print(nums)
 print(len(nums))
 
 # Ответ: 180

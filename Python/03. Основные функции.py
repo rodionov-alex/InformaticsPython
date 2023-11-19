@@ -205,7 +205,7 @@ print()
 # Функция возвращает список кортежей вида: (индекс_элемента, значение_элемента).
 seasons = ['Зима', 'Весна', 'Лето', 'Осень']
 print('seasons =', seasons)
-print('list(enumerate(seasons)) =', list(enumerate(seasons)))
+print('enumerate(seasons) ->', *(enumerate(seasons)))
 print()
 
 # zip(iterables) - упаковка списков (или других итеррируемых объектов).
@@ -214,15 +214,14 @@ print()
 arr1 = [1, 3, 5]
 arr2 = [2, 4, 6]
 print('arr1 =', arr1, ', arr2 =', arr2)
-print('list(zip(arr1, arr2)) =', list(zip(arr1, arr2)))
+print('zip(arr1, arr2) ->', *(zip(arr1, arr2)))
 print()
 
 # map(func, iterable) - применение функции (или лямбды) к каждому элементу списка (или другому итеррируемуму объекту).
 # Функция возвращает копию списка, где каждому элементу применена переданная в качестве аргумента функция.
 arr = ['123', '456', '789']
 print('arr =', arr)
-print('list(map(int, arr)) =', list(map(int, arr)))  # применяет функцию int() к каждому элементу списка arr
-
+print('map(int, arr) ->', *(map(int, arr)))  # применяет функцию int() к каждому элементу списка arr
 print()
 
 # filter(func, iterable) - фильтрация элементов списка (или другого итеррируемого объекта).
@@ -230,5 +229,5 @@ print()
 # функции или лямбды.
 arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 print('arr =', arr)
-print('list(filter(lambda x: x % 2 == 0, arr)) =', list(filter(lambda x: x % 2 == 0, arr)))  # фильтр на четность
+print('filter(lambda x: x % 2 == 0, arr) ->', *(filter(lambda x: x % 2 == 0, arr)))  # фильтр на четность
 print()

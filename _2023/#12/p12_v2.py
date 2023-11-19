@@ -57,6 +57,7 @@ while k != 3:
 
     sm = sum([int(x) for x in s[:-1]])
 
-    k = count_divs(sm)
+    if (sm ** 0.5) % 1 == 0:  # если количество делителей не четное
+        k = count_divs(sm)
 
 print(m)
