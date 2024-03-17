@@ -1,4 +1,4 @@
-with open('27_test.txt') as f:
+with open('27-B.txt') as f:
     nums = list(map(int, f.readlines()[1:]))
     n = len(nums)
     half = n // 2

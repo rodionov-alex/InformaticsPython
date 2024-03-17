@@ -9,7 +9,7 @@
 #
 # Ответ: 58085
 
-# Функция поиска всех возможныъх траекторий
+# Функция поиска всех возможных траекторий
 def f(a, b, way: list):
     if a == b:
         # Перебор чисел в траектории
@@ -26,12 +26,9 @@ def f(a, b, way: list):
         a2 = a * 3
         a3 = a * 4
         # Создаем 3 копии траектории и добавляем в каждую новые числа
-        way1 = way.copy()
-        way1.append(a1)
-        way2 = way.copy()
-        way2.append(a2)
-        way3 = way.copy()
-        way3.append(a3)
+        way1 = way + [a1]
+        way2 = way + [a2]
+        way3 = way + [a3]
         # Рекурсивно продолжаем поиск
         return f(a1, b, way1) + f(a2, b, way2) + f(a3, b, way3)
 

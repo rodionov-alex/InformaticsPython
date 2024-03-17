@@ -1,6 +1,6 @@
 from tqdm import tqdm
 
-f = open('27-B.txt').readlines()
+f = open('27-A.txt').readlines()
 nums = [int(x) for x in f[1:]]
 ln = len(nums)
 half = ln // 2
@@ -29,12 +29,10 @@ for i in tqdm(range(ln)):
     for j in range(half):
         summ += part1[j] * j
 
-    m = half
-
     for j in range(half):
         summ += part2[j] * (half - j)
 
-    sums.append(summ)
+    sums.append((i + 1, summ))
 
-print(sums.index(min(sums)) + 1)
+print(min(sums, key=lambda x: x[1]))
 

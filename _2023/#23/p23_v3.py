@@ -20,15 +20,8 @@ def f(a, b, way: list):
         a1 = a + 2
         a2 = a * 3
         a3 = a * 4
-        # Создаем 3 копии траектории и добавляем в каждую новые числа
-        way1 = way.copy()
-        way1.append(a1)
-        way2 = way.copy()
-        way2.append(a2)
-        way3 = way.copy()
-        way3.append(a3)
         # Рекурсивно продолжаем поиск
-        return f(a1, b, way1) + f(a2, b, way2) + f(a3, b, way3)
+        return f(a1, b, way + [a1]) + f(a2, b, way + [a2]) + f(a3, b, way + [a3])
 
 
 print(f(1, 600, [1]))

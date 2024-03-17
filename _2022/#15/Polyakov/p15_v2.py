@@ -7,17 +7,16 @@ p1, p2, q1, q2 = 4, 15, 12, 20
 
 P = [i / 10 for i in range(p1 * 10, p2 * 10 + 1)]
 Q = [i / 10 for i in range(q1 * 10, q2 * 10 + 1)]
+A = []
 
-def f(x, A):
+def f(x):
     return ((x in P) and (x in Q)) <= (x in A)
 
-A = set()
-
 for x in [i / 10 for i in range(3 * 10, 21 * 10)]:
-    if not f(x, A):
-        A.add(x)
+    if not f(x):
+        A.append(x)
 
-print(sorted(A))
+print(A)
 
 # [12, 15]
 # Ответ: 15 - 12 = 3

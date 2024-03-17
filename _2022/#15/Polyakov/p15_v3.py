@@ -3,21 +3,26 @@
 # ((x ∈ P) ≡ (x ∈ Q)) → (x ∉ A)
 # тождественно истинна, то есть принимает значение 1 при любом значении переменной х.
 
+res = []
+
+for x in range(1000):
+
+
+
 p1, p2, q1, q2 = 5, 30, 14, 23
 
 P = [i / 10 for i in range(p1 * 10, p2 * 10 + 1)]
 Q = [i / 10 for i in range(q1 * 10, q2 * 10 + 1)]
+A = [i / 10 for i in range(4 * 10, 31 * 10)]
 
-def f(x, A):
+def f(x):
     return ((x in P) == (x in Q)) <= (x not in A)
 
-A = list([i / 10 for i in range(4 * 10, 31 * 10)])
-
 for x in [i / 10 for i in range(4 * 10, 31 * 10)]:
-    if not f(x, A):
+    if not f(x):
         A.remove(x)
 
-print(sorted(A))
+print(A)
 
 bi = 0  # начало отрезка
 
@@ -25,10 +30,17 @@ for i in range(1, len(A)):
     # Берем разницу между соседними значениями. Округляем до 1 знака поле запятой чтобы избежать погрешности.
     # Если разница больше 0.1, значит тут 2 отрезка.
     if round(A[i] - A[i - 1], 1) > 0.1:
-        print('[', A[bi], '; ', A[i - 1], ']', sep='')
+        print(f'[{A[bi]}; {A[i - 1]}]')
         bi = i
-else:
-    print('[', A[bi], '; ', A[i], ']', sep='')
+
+print(f'[{A[bi]}; {A[-1]}]')
+
+A = [i for i in range(5, 14 + 1)]
+res = []
+for x in range(500):
+    if not f(x):
+        res.append(x)
+print(res)
 
 # [5; 14) (23; 30]
 # 14 - 5 = 9; 30 - 23 = 7
